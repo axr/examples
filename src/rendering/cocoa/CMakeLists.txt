@@ -35,21 +35,19 @@ if(APPLE)
         FOLDER Examples
     )
 
-    if(IS_RELEASE_BUILD)
-        install(TARGETS "${TARGET_NAME_APP_COCOA}"
-            BUNDLE DESTINATION Examples COMPONENT examples
-            RUNTIME DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_REL}/examples COMPONENT examples
-        )
+    install(TARGETS "${TARGET_NAME_APP_COCOA}"
+        BUNDLE DESTINATION Examples COMPONENT examples
+        RUNTIME DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_REL}/examples COMPONENT examples
+    )
 
-        if(APPLE)
-            set(app_path Examples)
-        else()
-            set(app_path ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_REL}/examples)
-        endif()
-
-        install_qt4_executable("${app_path}/${TARGET_NAME_APP_COCOA_OUTPUT_NAME}${CMAKE_USER_EXECUTABLE_SUFFIX}" "qtaccessiblewidgets qcncodecs qjpcodecs qkrcodecs qtwcodecs qsvgicon qgif qico qjpeg qmng qsvg qtiff" "" "${ALL_LIBRARY_DIRS}" "" "" examples)
-        empty_lproj(${app_path}/${TARGET_NAME_APP_COCOA_OUTPUT_NAME})
+    if(APPLE)
+        set(app_path Examples)
+    else()
+        set(app_path ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_REL}/examples)
     endif()
+
+    install_qt4_executable("${app_path}/${TARGET_NAME_APP_COCOA_OUTPUT_NAME}${CMAKE_USER_EXECUTABLE_SUFFIX}" "qtaccessiblewidgets qcncodecs qjpcodecs qkrcodecs qtwcodecs qsvgicon qgif qico qjpeg qmng qsvg qtiff" "" "${ALL_LIBRARY_DIRS}" "" "" examples)
+    empty_lproj(${app_path}/${TARGET_NAME_APP_COCOA_OUTPUT_NAME})
 else()
     add_custom_target("${TARGET_NAME_APP_COCOA}" SOURCES ${cocoa_SOURCES})
 endif()
