@@ -24,11 +24,11 @@
 			<string>Viewer</string>
 			<key>NSExportableTypes</key>
 			<array>
-				<string>vg.axr.hss</string>
+				<string>org.axrproject.hss</string>
 			</array>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>vg.axr.hss</string>
+				<string>org.axrproject.hss</string>
 			</array>
 		</dict>
 		<dict>
@@ -51,7 +51,7 @@
 	<key>CFBundleIconFile</key>
 	<string>${MACOSX_BUNDLE_ICON_FILE}</string>
 	<key>CFBundleIdentifier</key>
-	<string>vg.axr.example.cocoa</string>
+	<string>org.axrproject.example.cocoa</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
