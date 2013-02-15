@@ -1,6 +1,6 @@
 [submodule "src/core"]
 	path = src/core
-	url = https://github.com/axr/core.git
+	url = ../core.git
 [submodule "common"]
 	path = common
-	url = https://github.com/axr/common.git
+	url = ../common.git
